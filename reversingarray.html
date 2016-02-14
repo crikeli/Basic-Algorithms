@@ -1,0 +1,13 @@
+<h1>Check Console</h1>
+
+<script type="text/javascript">
+	var arr = [-3,5,1,3,2,10];
+	// Math.floor allows for arrays of even and odd lengths to be iterated through and evaluated
+	for (var i=0; i < Math.floor(arr.length/2); i++){
+		var temp = arr[i];
+		arr[i] = arr[arr.length-1-i];
+		arr[arr.length-1-i] = temp;
+	}
+	console.log(arr);
+
+</script>

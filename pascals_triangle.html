@@ -1,0 +1,32 @@
+<h1>Check Console</h1>
+
+
+<script type="text/javascript">
+	var numTiers = 100,
+    triangle, 
+    start, 
+    stop;
+
+	function pascalRecursive(n, a) {
+
+  if (n < 2) return a; // We already have the top row
+
+  var prevTier = a[a.length-1];
+  var curTier = [1];
+
+  for (var i = 1; i < prevTier.length; i++) {
+    curTier[i] = prevTier[i] + prevTier[i-1];
+  }
+  curTier.push(1);
+  a.push(curTier);
+
+  return pascalRecursive(n-1, a);
+}
+
+start = new Date().getMilliseconds();
+var triangle = pascalRecursive(numTiers, [[1]]);
+stop = new Date().getMilliseconds();
+executionTime = stop - start;
+console.log('Execution time: ' + executionTime + '\n');
+
+</script>
